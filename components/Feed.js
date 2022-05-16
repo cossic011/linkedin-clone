@@ -15,7 +15,9 @@ const Feed = ({ posts }) => {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const { data } = await axios.get("http://localhost:3000/api/posts");
+      const { data } = await axios.get(
+        "https://linkedin-clone-green.vercel.app/api/posts"
+      );
 
       setRealtimePosts(data);
       dispatch(handlePostState(false));

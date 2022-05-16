@@ -14,14 +14,17 @@ const Form = () => {
   const uploadPost = async (e) => {
     e.preventDefault();
 
-    const { data } = await axios.post("http://localhost:3000/api/posts", {
-      input: input,
-      photoUrl: photoUrl,
-      username: session.user.name,
-      email: session.user.email,
-      userImg: session.user.image,
-      createdAt: new Date().toString(),
-    });
+    const { data } = await axios.post(
+      "https://linkedin-clone-green.vercel.app/api/posts",
+      {
+        input: input,
+        photoUrl: photoUrl,
+        username: session.user.name,
+        email: session.user.email,
+        userImg: session.user.image,
+        createdAt: new Date().toString(),
+      }
+    );
 
     dispatch(handlePostState(true));
 

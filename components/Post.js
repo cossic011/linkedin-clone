@@ -28,7 +28,7 @@ const Post = ({ post, modalPost }) => {
 
   const deletePost = async () => {
     const response = await axios.delete(
-      `http://localhost:3000/api/posts/${post._id}`
+      `https://linkedin-clone-green.vercel.app/api/posts/${post._id}`
     );
 
     dispatch(handlePostState(true));
